@@ -8,4 +8,4 @@ A password set lock operation using a Mealy state machine connected with a 7-seg
 
 p2_top.s
 
-Implements a binary search algorithm in ARM assembly to locate a key within an array, making use of stack operations and ARM instructions to manage function parameters, intermediate values, and control flow.
+Implements a binary search algorithm in ARM assembly to locate a key within an array, making use of stack operations and ARM instructions.
