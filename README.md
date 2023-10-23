@@ -1,12 +1,12 @@
 **P1 Combinational Logic and State Machine Design Using Verilog**
 
-p1_top.v and p1_top_tb.v
+p1_top.v, p1_top_tb.v, and De1_SoC.qsf
 
 A password set lock operation using a Mealy state machine connected with a 7-segment LED display on the DE1-SoC using a combinational logic block. 
 
 **P2 ARM Assembly Programming**
 
-p2_top.s
+p2_top.s, main.s, and address_map_arm.s
 
 Implements a binary search algorithm in ARM assembly to locate a key within an array, making use of stack operations and ARM instructions.
 
