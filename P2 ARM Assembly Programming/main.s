@@ -1,15 +1,3 @@
-// INSTRUCTIONS: To use this file with your "lab4.s" 
-// ensure the first two lines in binary_search contain the
-// following two lines but without "//" at the beginning:
-//
-// .globl binary_search
-// binary_search:
-//
-// Then, add main.s to your project and compile as normal.
-// If you defined your own "_start" function in lab4.s
-// then rename it to something else like "_mystart" to avoid
-// compilation errors.
-//
 // The code below uses KEY3, KEY0, SW0-SW9 and LEDR0-LEDR9
 // to interact with your binary_search.  When started, the
 // code enters a loop that continuously checks the values
