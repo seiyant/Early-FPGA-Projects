@@ -1,9 +1,9 @@
 module p3_regfile (data_in, writenum, readnum, write, clk, data_out);
     // Input and output port declarations
-    input [15:0] data_in,
-    input [2:0] writenum, readnum,
-    input write, clk,
-    output reg [15:0] data_out
+    input [15:0] data_in;
+    input [2:0] writenum, readnum;
+    input write, clk;
+    output reg [15:0] data_out;
 
     // Define 8 16-bits registers
     reg [15:0] R0, R1, R2, R3, R4, R5, R6, R7;

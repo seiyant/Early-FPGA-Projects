@@ -13,7 +13,7 @@ module p3_regfile_tb();
         .data_out(data_out)
     );
     
-    // Clock generation
+    // Clock
     initial begin
         clk = 0;
         forever #5 clk = ~clk; // 10 time units clock period
