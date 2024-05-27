@@ -1,6 +1,7 @@
 **P1 Combinational Logic and State Machine Design**
 
 p1_top.v
+
 *p1_top_tb.v*
 
 A password set lock operation using a Mealy state machine connected with a 7-segment LED display on the DE1-SoC using a combinational logic block. 
@@ -13,6 +14,7 @@ Implements a binary search algorithm in ARM assembly to locate a key within an a
 
 **P3 Datapath for the Simple RISC Machine**
 p3_top.v, p3_datapath.v, p3_alu.v, p3_regfile.v, p3_shifter.v
+
 *p3_datapath_tb.v, p3_alu_tb.v, p3_regfile_tb.v, p3_shifter_tb.v*
 
 Implements a datapath for a simple RISC machine, integrating register file, ALU, and shifter modules to execute basic arithmetic and logical operations, with a status register to record special outcomes like zero results.
