@@ -1,14 +1,9 @@
 module p3_regfile_tb();
-
-    // Inputs
     reg [15:0] data_in;
     reg [2:0] writenum, readnum;
     reg write, clk;
-    
-    // Outputs
     wire [15:0] data_out;
-    
-    // Instantiate DUT
+
     p3_regfile dut (
         .data_in(data_in),
         .writenum(writenum),
@@ -28,8 +23,8 @@ module p3_regfile_tb();
     task reset_sys();
         begin
             write = 0;
-            writenum = 3'b000;
-            readnum = 3'b000;
+            writenum = 3'b0;
+            readnum = 3'b0;
             data_in = 16'b0;
             #20;
         end
@@ -41,29 +36,29 @@ module p3_regfile_tb();
 
         // Test combination: write = 0
         data_in = 16'hA5A5;
-        writenum = 3'b000;
+        writenum = 3'b0;
         write = 0; #10;
-        readnum = 3'b000; #10;
+        readnum = 3'b0; #10;
         #20; // Check waveform
         reset_sys();
 
         // Test combination: write = 1
         data_in = 16'h5A5A;
-        writenum = 3'b001;
+        writenum = 3'b1;
         write = 1; #10;
         write = 0; // Turn write off
-        readnum = 3'b001; #10;
+        readnum = 3'b1; #10;
         #20; // Check waveform
         reset_sys();
 
-        // Test combination: write = 1, readnum = 11
+        // Test combination: write = 1, readnum = 3
         data_in = 16'h1234;
-        writenum = 3'b010;
+        writenum = 3'b10;
         write = 1; #10;
         write = 0; // Turn write off
-        readnum = 3'b011;
+        readnum = 3'b11;
         #20; //Check waveform
-        readnum = 3'b010; // Correct readnum
+        readnum = 3'b10; // Correct readnum
         #20; // Check waveform
         reset_sys();
 
