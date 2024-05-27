@@ -46,7 +46,7 @@ module p3_datapath (datapath_in, writenum, readnum, write, clk, loada, loadb, lo
         .sout(sout)
     );
 
-    // Pass through arithmetic logic unit and status register
+    // Pass through arithmetic logic unit
     p3_alu ALU (
         .Ain(Ain),
         .Bin(Bin),
