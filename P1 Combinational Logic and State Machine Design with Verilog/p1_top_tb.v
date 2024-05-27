@@ -71,5 +71,4 @@ module p1_top_tb();
 
         $finish;
     end
-    
 endmodule
