@@ -19,7 +19,13 @@ module p3_alu (Ain, Bin, ALUop, out, N, V, Z);
         N = out[15];
 
         // Flag for overflow
-        V = ((Ain[15] == Bin[15]) && (out[15] != Ain[15])) ? 1'b1 : 1'b0;
+        if (ALUop == 2'b00) begin
+            V = ((Ain[15] == Bin[15]) && (out[15] != Ain[15])) ? 1'b1 : 1'b0; end 
+        else if (ALUop == 2'b01) begin
+            V = ((Ain[15] != Bin[15]) && (out[15] != Ain[15])) ? 1'b1 : 1'b0; end 
+        else begin
+            V = 1'b0;
+        end
 
         // Flag for zero
         Z = (out == 16'b0) ? 1'b1 : 1'b0;
