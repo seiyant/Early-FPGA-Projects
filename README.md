@@ -13,6 +13,7 @@ p2_top.s
 Implements a binary search algorithm in ARM assembly to locate a key within an array, making use of stack operations and ARM instructions.
 
 **P3 Datapath for the Simple RISC Machine**
+
 p3_top.v, p3_datapath.v, p3_alu.v, p3_regfile.v, p3_shifter.v
 
 *p3_datapath_tb.v, p3_alu_tb.v, p3_regfile_tb.v, p3_shifter_tb.v*
