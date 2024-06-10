@@ -15,7 +15,7 @@ module p4_datapath (datapath_in, mdata, sximm5, sximm8, PC, writenum, readnum, w
     wire N, V, Z;
 
     // Pass through register file
-    p3_regfile REGFILE (
+    p4_regfile REGFILE (
         .data_in(data_in),
         .writenum(writenum),
         .readnum(readnum),
@@ -46,14 +46,14 @@ module p4_datapath (datapath_in, mdata, sximm5, sximm8, PC, writenum, readnum, w
     assign B = B_reg;
 
     // Pass through shifter unit
-    p3_shifter SHIFTER (
+    p4_shifter SHIFTER (
         .in(B),
         .shift(shift),
         .sout(sout)
     );
 
     // Pass through arithmetic logic unit
-    p3_alu ALU (
+    p4_alu ALU (
         .Ain(Ain),
         .Bin(Bin),
         .ALUop(ALUop),
