@@ -14,5 +14,4 @@ module p4_shifter (in, shift, sout);
             default: sout = in;
         endcase
     end
-
 endmodule

@@ -5,7 +5,7 @@
 `define WRITE_REG 3'b100
 `define DECODE    3'b101
 
-module cpu (clk, reset, s, load, in, out, N, V, Z, w);
+module p4_cpu (clk, reset, s, load, in, out, N, V, Z, w);
     //Input and output port declarations
     input clk, reset, s, load;
     input [15:0] in;
@@ -86,7 +86,7 @@ module cpu (clk, reset, s, load, in, out, N, V, Z, w);
     end
 
     // Instantiate datapath
-    p3_datapath DP (
+    p4_datapath DP (
         .datapath_in(in),
         .mdata(16'b0),                                     //Placeholder for memory data input, not in use
         .sximm8({{8{instruction[7]}}, instruction[7:0]}),  //Sign-extended 8-bit immediate value

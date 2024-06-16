@@ -1,5 +1,4 @@
-module p4_datapath (datapath_in, mdata, sximm5, sximm8, PC, writenum, readnum, write, clk, loada, loadb, loadc, loads, asel, bsel, vsel, shift, ALUop, datapath_out, N_out, V_out, Z_out
-);
+module p4_datapath (datapath_in, mdata, sximm5, sximm8, PC, writenum, readnum, write, clk, loada, loadb, loadc, loads, asel, bsel, vsel, shift, ALUop, datapath_out, N_out, V_out, Z_out);
     //Input and output port declarations
     input [15:0] datapath_in, mdata, sximm5, sximm8, PC;
     input [2:0] writenum, readnum;

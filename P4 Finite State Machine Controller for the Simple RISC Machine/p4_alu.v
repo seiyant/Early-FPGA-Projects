@@ -1,4 +1,4 @@
-module p3_alu (Ain, Bin, ALUop, out, N, V, Z);
+module p4_alu (Ain, Bin, ALUop, out, N, V, Z);
     // Input and output port declarations
     input [15:0] Ain, Bin;
     input [1:0] ALUop;
