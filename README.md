@@ -22,6 +22,12 @@ Implements a datapath for a simple RISC (Reduced Instruction Set Computer) machi
 
 **P4 Finite State Machine Controller for the Simple RISC Machine**
 
+p4_cpu.v, p4_datapath.v, p4_alu.v, p4_regfile.v, p4_shifter.v
+
+*p4_cpu_tb.v*
+
+Extends the datapath from P3 by integrating an FSM (Finite State Machine) controller and an instruction register, allowing for automatic execution of instructions. The FSM manages control signals and state transitions, enabling the CPU to get, decode, and execute a series of instructions stored in the instruction register.
+
 **P5 Adding Memory and IO to the Simple RISC Machine**
 
 **P6 Supporting Branches in the Simple RISC Machine**
