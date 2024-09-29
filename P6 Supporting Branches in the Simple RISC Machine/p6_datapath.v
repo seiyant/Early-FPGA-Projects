@@ -1,4 +1,4 @@
-module p5_datapath (datapath_in, mdata, sximm5, sximm8, PC, writenum, readnum, write, clk, loada, loadb, loadc, loads, asel, bsel, vsel, shift, ALUop, datapath_out, N_out, V_out, Z_out);
+module p6_datapath (datapath_in, mdata, sximm5, sximm8, PC, writenum, readnum, write, clk, loada, loadb, loadc, loads, asel, bsel, vsel, shift, ALUop, datapath_out, N_out, V_out, Z_out);
     // Input and output port declarations
     input [15:0] datapath_in, mdata, sximm5, sximm8, PC;
     input [2:0] writenum, readnum;
@@ -14,7 +14,7 @@ module p5_datapath (datapath_in, mdata, sximm5, sximm8, PC, writenum, readnum, w
     wire N, V, Z;
 
     // Pass through register file
-    p5_regfile REGFILE (
+    p6_regfile REGFILE (
         .data_in(data_in),
         .writenum(writenum),
         .readnum(readnum),
@@ -45,14 +45,14 @@ module p5_datapath (datapath_in, mdata, sximm5, sximm8, PC, writenum, readnum, w
     assign B = B_reg;
 
     // Pass through shifter unit
-    p5_shifter SHIFTER (
+    p6_shifter SHIFTER (
         .in(B),
         .shift(shift),
         .sout(sout)
     );
 
     // Pass through arithmetic logic unit
-    p5_alu ALU (
+    p6_alu ALU (
         .Ain(Ain),
         .Bin(Bin),
         .ALUop(ALUop),

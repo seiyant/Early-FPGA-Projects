@@ -113,9 +113,9 @@ module p5_cpu (clk, reset, s, load, in, out, N, V, Z, w);
     // Instantiate datapath
     p5_datapath DP (
         .datapath_in(in),
-        .mdata(16'b0),                                     // Placeholder for memory data input, not in use
+        .mdata(16'b0), // Placeholder for memory data input, not in use
         .sximm8({{8{instruction[7]}}, instruction[7:0]}),  //Sign-extended 8-bit immediate value
-        .PC(16'b0),                                        // Placeholder for program counter, not in use
+        .PC(16'b0), // Placeholder for program counter, not in use
         .sximm5({{11{instruction[4]}}, instruction[4:0]}), //Sign-extended 5-bit immediate value
         .writenum(writenum),
         .readnum(readnum),
@@ -130,7 +130,7 @@ module p5_cpu (clk, reset, s, load, in, out, N, V, Z, w);
         .loads(loads),
         .shift(shift),
         .ALUop(ALUop),
-        .datapath_out(out),                                // Connect datapath to CPU
+        .datapath_out(out),
         .Z_out(Z),
         .N_out(N),
         .V_out(V)
