@@ -5,31 +5,32 @@ module p6_alu (Ain, Bin, ALUop, out, N, V, Z);
     output reg [15:0] out;
     output reg N, V, Z;
 
-    // Operator combinational logic
+    reg [15:0] result; 
+
     always @(*) begin
         case (ALUop)
             2'b00: out = Ain + Bin; // Add
-            2'b01: out = Ain - Bin; // Subtract
+            2'b01: begin
+                result = Ain - Bin; // Subtract or CMP
+                out = result; // For regular subtraction
+
+                // Set flags for CMP or subtraction
+                N = result[15]; // Negative flag: MSB of the result
+
+                V = ((Ain[15] != Bin[15]) && (result[15] != Ain[15])) ? 1'b1 : 1'b0; // Overflow: only on subtraction
+
+                Z = (result == 16'b0) ? 1'b1 : 1'b0; // Zero flag: all bits are zero
+            end
             2'b10: out = Ain & Bin; // And
-            2'b11: out = ~Bin;      // Not
+            2'b11: out = ~Bin; // Not
             default: out = 16'd0; 
         endcase
 
-        // Flag for negative
-        N = out[15];
-
-        // Flag for overflow
-        if (ALUop == 2'b00) begin // Addition overflow detection
-            V = ((Ain[15] == Bin[15]) && (out[15] != Ain[15])) ? 1'b1 : 1'b0;
-        end 
-        else if (ALUop == 2'b01) begin // Subtraction overflow detection
-            V = ((Ain[15] != Bin[15]) && (out[15] != Ain[15])) ? 1'b1 : 1'b0;
-        end 
-        else begin
+        // If not a CMP or subtraction, clear flags for safety
+        if (ALUop != 2'b01) begin
+            N = 1'b0;
             V = 1'b0;
+            Z = (out == 16'b0) ? 1'b1 : 1'b0;
         end
-
-        // Flag for zero (all bits are zero)
-        Z = (out == 16'b0) ? 1'b1 : 1'b0;
     end
 endmodule
