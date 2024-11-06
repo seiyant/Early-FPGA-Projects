@@ -1,23 +1,29 @@
-**--P1 Basic State Machine Design--**
+# Project Overview: DE1-SoC RISC Machine and ARM Assembly
 
-A password set lock operation using a Mealy state machine connected with a 7-segment LED display on the DE1-SoC using a combinational logic block. 
+This project explores fundamental concepts in digital design and computer architecture, implemented on the DE1-SoC board. Each phase builds upon the previous, progressively enhancing a basic RISC architecture and showcasing ARM assembly techniques.
 
-**--P2 Basic ARM Assembly--**
+## Project Phases
 
-Implements a binary search algorithm in ARM assembly to locate a key within an array, making use of stack operations and ARM instructions.
+### P1: Basic State Machine Design
 
-**--P3 RISC Datapath--**
+This phase introduces a password-protected lock mechanism using a Mealy state machine, paired with a 7-segment LED display on the DE1-SoC. The design uses combinational logic to validate input sequences and display states.
 
-Implements a datapath for a simple RISC (Reduced Instruction Set Computer) machine, integrating register file, ALU, and shifter modules to execute basic arithmetic and logical operations, with a status register to record special outcomes like zero results.
+### P2: ARM Assembly - Binary Search
 
-**--P4 RISC FSM Controller--**
+Implements a binary search algorithm in ARM assembly to locate a specific key within an array. This phase leverages stack operations and ARM instructions, reinforcing low-level understanding of data handling in ARM architecture.
 
-Extends the datapath from P3 by integrating an FSM (Finite State Machine) controller and an instruction register, allowing for automatic execution of instructions. The FSM manages control signals and state transitions, enabling the CPU to get, decode, and execute a series of instructions stored in the instruction register.
+### P3: RISC Datapath
 
-**--P5 RISC Memory and I/O--**
+Develops a simplified RISC (Reduced Instruction Set Computer) datapath by integrating a register file, ALU, and shifter modules. This module performs basic arithmetic and logical operations, utilizing a status register to record outcomes, such as zero results.
 
-Extends the simple RISC machine by adding instruction memory and a program counter to fetch and execute instructions automatically, replacing manual input through switches. It introduces LDR (load register) and STR (store register) instructions to enable reading from and writing to data memory. Additionally, the CPU is integrated with memory-mapped I/O, connecting switches and LEDs on the DE1-SoC for external device interaction.
+### P4: RISC FSM Controller
 
-**--P6 RISC Support Branches--**
+Extends the RISC datapath by adding a Finite State Machine (FSM) controller and an instruction register, allowing for automatic instruction execution. The FSM orchestrates control signals and state transitions, enabling the CPU to fetch, decode, and execute stored instructions autonomously.
 
-Extends the simple RISC machine by adding conditional branch instructions, enabling constructs like loops and conditional statements with BLT (branch if less than) and BEQ (branch if equal) for dynamic control flow. It introduces function calls with the BL (branch and link) instruction and returns via the BX (branch and exchange) instruction to support modular programming.
+### P5: RISC Memory and I/O Integration
+
+Enhances the RISC machine with instruction memory and a program counter, automating instruction fetch and execution. LDR (load register) and STR (store register) instructions enable interaction with data memory, and memory-mapped I/O connects the CPU to DE1-SoC switches and LEDs, facilitating external device interaction.
+
+### P6: Branching and Function Support in RISC
+
+Introduces conditional branching to the RISC machine, supporting loops and conditional logic through BLT (branch if less than) and BEQ (branch if equal) instructions. Adds modular programming capabilities with BL (branch and link) for function calls and BX (branch and exchange) for returns, enabling more dynamic control flow.
